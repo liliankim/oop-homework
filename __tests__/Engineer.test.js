@@ -3,7 +3,7 @@ const Engineer = require('../lib/Engineer')
 describe('Engineer constructor', () => {
     describe('test all engineer properties', () => {
         test('name', () => {
-            const engineer = new Engineer ('Kim', 54321, 'hi@email.com')
+            const engineer = new Engineer ('Kim', 54321, 'hi@email.com','awesome')
             expect(employee.name).toEqual('Kim')
         })
         
