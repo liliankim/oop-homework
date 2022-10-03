@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/liliankim/oop-homework#readme",
   "dependencies": {
+    "inquirer": "^8.2.4",
     "jest": "^29.0.3"
   }
 }
