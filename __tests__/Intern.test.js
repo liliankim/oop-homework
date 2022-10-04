@@ -1,4 +1,4 @@
-const Intern = require('../lib.Intern')
+const Intern = require('../lib/Intern')
 describe('Intern constructor', () => {
     describe ('test all intern properties', () => {
         const intern = new Intern('Alice', 101, 'wonderland@email.com', 'disneyland')
