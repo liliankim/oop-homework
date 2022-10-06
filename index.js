@@ -4,6 +4,10 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const employee = [];
+const engineerCard = require("./src/engineerCard");
+const managerCard = require("./src/managerCard");
+const internCard = require("./src/internCard");
+const body = require("./src/index");
 
 const managerQuestion = [
   {
@@ -89,7 +93,7 @@ const menu = () => {
         addIntern();
       }
 
-      if(answer.selection === "Finish"){
+      if (answer.selection === "Finish") {
         createHTML();
       }
     });
@@ -122,8 +126,22 @@ const addIntern = () => {
 };
 
 const createHTML = () => {
-    console.log(employee)
-}
+  console.log(employee);
+  let cards = "";
+  for (i = 0; i < employee.length; i++) {
+    if (employee[i].getRole() === "Manager") {
+      cards = cards + managerCard(employee[i])
+    }
+    if (employee[i].getRole() === "Intern") {
+      cards = cards + internCard(employee[i])
+    }
+    if(employee[i].getRole() === "Engineer"){
+      cards = cards + engineerCard(employee[i])
+    }
+  }
+  console.log (cards)
+fs.writeFileSync("./dist/team.html",body(cards))
+};
 
 const start = () => {
   inquirer.prompt(managerQuestion).then((answer) => {
